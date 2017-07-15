@@ -45,7 +45,8 @@ public class TestDatabaseDAO {
 		source.addValue("CUSTID", cust.getCustId());
 		source.addValue("NAME", cust.getName());
 		source.addValue("AGE", cust.getAge());
-		int recordcount= jdbcTemplate.update(INSERT_CUSTOMER, source);		
+		int recordcount= jdbcTemplate.update(INSERT_CUSTOMER, source);	
+		LOGGER.debug("Total Record inserted in table:"+ recordcount);
 		return recordcount;
 	}
 
@@ -53,6 +54,7 @@ public class TestDatabaseDAO {
 		MapSqlParameterSource source= new MapSqlParameterSource();
 		source.addValue("ID", id);
 		int recordcount= jdbcTemplate.update(DELETE_CUSTOMER, source);	
+		LOGGER.debug("Total Record Deleted from table:"+ recordcount);
 		return recordcount;
 	}
 
