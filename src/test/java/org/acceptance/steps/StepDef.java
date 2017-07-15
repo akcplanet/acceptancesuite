@@ -25,7 +25,7 @@ public class StepDef {
 	
 	@Given("^Pre Delete the record$")
 	public void pre_Delete_the_record() throws Throwable {
-		LOGGER.debug("ID genrated :"+ genId);
+		LOGGER.debug("ID generated :"+ genId);
 		verificationhandler.deleteData(genId);
 	}
 
