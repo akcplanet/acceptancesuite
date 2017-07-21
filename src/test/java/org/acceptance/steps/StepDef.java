@@ -24,13 +24,17 @@ public class StepDef {
 	private VerificationHandler verificationhandler;
 	
 	@Given("^Pre Delete the record$")
-	public void pre_Delete_the_record() throws Throwable {
+	public void pre_Delete_the_record() {
 		LOGGER.debug("ID generated :"+ genId);
-		verificationhandler.deleteData(genId);
+		try {
+			verificationhandler.deleteData(genId);
+		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+			e.printStackTrace();
+		}
 	}
 
-	@Given("^Insert the record$")
-	public void insert_the_record() throws Throwable {
+	@Given("^Process the Transaction$")
+	public void insert_the_record() {
 		try {
 			verificationhandler.insertData(genId);
 		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
@@ -38,8 +42,8 @@ public class StepDef {
 		}
 	}
 
-	@Then("^Perform validation$")
-	public void perform_validation() throws Throwable {
+	@Then("^Perform Validation$")
+	public void perform_validation()  {
 		try {
 			verificationhandler.verification(genId);
 		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
@@ -48,8 +52,14 @@ public class StepDef {
 	}
 
 	@Then("^Post Delete the record$")
-	public void post_Delete_the_record() throws Throwable {
-		verificationhandler.deleteData(genId);
+	public void post_Delete_the_record() {
+		try {
+			verificationhandler.deleteData(genId);
+		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+			e.printStackTrace();
+		}
 	}
+	
+
 
 }

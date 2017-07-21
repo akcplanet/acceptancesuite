@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
 		glue = "org.acceptance.steps",
 		features = "classpath:features/tutorial.feature"
-		,tags = "@test1")
+		,tags = "@test")
 public class CukesRunnerTest  {
 
 }

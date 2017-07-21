@@ -1,8 +1,8 @@
-Feature: User Management
+Feature: Automation Demo for API & UI Smoke Testing
 
-@test1
-  Scenario: Sampel E2E testing 
-    Given Pre Delete the record
-    Given Insert the record
-    Then Perform validation
-    Then Post Delete the record
+@test @stage 
+Scenario: Common API Data Verifcation 
+	Given Pre Delete the record 
+	When Process the Transaction 
+	Then Perform Validation 
+	And Post Delete the record
