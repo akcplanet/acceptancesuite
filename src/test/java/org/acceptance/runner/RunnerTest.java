@@ -10,6 +10,6 @@ import org.junit.runner.RunWith;
         "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml"},
 		glue = "org.acceptance.steps",
 		features = "classpath:features/demo.feature")
-public class CukesRunnerTest  {
+public class RunnerTest  {
 
 }
