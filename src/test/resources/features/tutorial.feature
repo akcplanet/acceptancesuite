@@ -1,4 +1,4 @@
-Feature: Automation Demo for API & UI Smoke Testing
+Feature: Automation Demo for API Testing
 
 @test @stage 
 Scenario: Common API Data Verifcation 
